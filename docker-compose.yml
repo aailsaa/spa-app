@@ -1,14 +1,10 @@
-version: "3"
-
 services:
 
   mysql:
     image: mysql:8
-    container_name: appointment-mysql
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: appointment_scheduler
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appointments
     ports:
       - "3306:3306"
 
@@ -18,8 +14,10 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
-    environment:
-      DB_HOST: mysql
-      DB_NAME: appointment_scheduler
-      DB_USER: root
-      DB_PASSWORD: password
+
+  frontend:
+    build: ./appointment-scheduler-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
