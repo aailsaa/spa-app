@@ -1,0 +1,16 @@
+node_modules
+appointment-scheduler-frontend/node_modules
+appointment-scheduler/target
+.DS_Store
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+README.md
+.env
+npm-debug.log
+target
+dist
+build
+*.log
+*.md
