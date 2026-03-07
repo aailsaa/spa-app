@@ -1,11 +1,8 @@
 node_modules
 .git
-build
-dist
-coverage
-npm-debug.log
 .gitignore
 Dockerfile
+README.md
 *.log
 .env
 target
