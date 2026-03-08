@@ -1,7 +1,7 @@
 services:
 
   backend:
-    image: spa-backend
+    build: ./appointment-scheduler
     ports:
       - "8080:8080"
     environment:
@@ -10,7 +10,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
 
   frontend:
-    image: spa-frontend
+    build: ./appointment-scheduler-frontend
     ports:
       - "3000:3000"
     depends_on:
